@@ -2,6 +2,8 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import axios from "axios";
 import QuestionCard from './components/QuestionCard';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 function App() {
   const [pokemons, setPokemons] = useState([]);
@@ -63,7 +65,7 @@ function App() {
   if (!currentPayload) return <p>Loading Pokémons...</p>;
 
   return (
-    <div>
+    <div className='container'>
       <QuestionCard payload={currentPayload} onPlayAgain={handlePlayAgain} />
     </div>
   );

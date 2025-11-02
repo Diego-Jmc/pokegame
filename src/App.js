@@ -9,6 +9,7 @@ function App() {
   const [pokemons, setPokemons] = useState([]);
   const [currentPayload, setCurrentPayload] = useState(null);
 
+
   function getRandomSubset(array, size) {
     const shuffled = [...array].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, size);
@@ -18,6 +19,7 @@ function App() {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
+  // Generates a new payload with one answer and three options 
   function generateRandomSubsetOfPokemons() {
     const pokemon = pokemons[generateRandomNumber(0, pokemons.length - 1)];
     const options = getRandomSubset(pokemons.filter(p => p !== pokemon), 3);
@@ -29,9 +31,10 @@ function App() {
     };
   }
 
+  // fetch all pokemons from API and set initial payload
   function fetchPokemons() {
     axios
-      .get(`${process.env.REACT_APP_POKE_API_URL}?limit=492`)
+      .get(`${process.env.REACT_APP_POKE_API_URL}?limit=492`) // only until gen 5
       .then((response) => {
         const pokemonsList = response.data.results.map(e => e.name);
         setPokemons(pokemonsList);
@@ -53,6 +56,7 @@ function App() {
       });
   }
 
+  // used by QuestionCard to request a new payload
   function handlePlayAgain() {
     const newPayload = generateRandomSubsetOfPokemons();
     setCurrentPayload(newPayload);

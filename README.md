@@ -15,3 +15,9 @@ El juego utiliza la **PokeAPI** para obtener datos e imágenes oficiales de los 
 # Instrucciones para ejecutar el programa localmente
 
 - Ejecutar el archivo run.bat
+
+
+
+# Instrucciones para ejecutar las pruebas unitarias
+
+- Ejecutar el archivo unit-tests.bat

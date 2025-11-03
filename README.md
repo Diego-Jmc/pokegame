@@ -12,7 +12,7 @@ El juego utiliza la **PokeAPI** para obtener datos e imágenes oficiales de los 
 - [Axios](https://axios-http.com/)
 - [PokeAPI](https://pokeapi.co/)
 
-# Instrucciones para ejecutar el programa localmente
+# Instrucciones para ejecutar el programa localmente (dejo a proposito el archivo .env en el repositorio por motivos de prueba)
 
 - Ejecutar el archivo run.bat
 
